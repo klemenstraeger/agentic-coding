@@ -1,0 +1,62 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": {
+      "rm -rf *": "deny",
+      "rm -fr *": "deny",
+      "sudo *": "deny",
+      "mkfs *": "deny",
+      "dd *": "deny",
+      "wget *|bash*": "deny",
+      "wget *| bash*": "deny",
+      "git push --force*": "deny",
+      "git push *--force*": "deny",
+      "git reset --hard*": "deny"
+    },
+    "edit": {
+      "~/.bashrc": "deny",
+      "~/.zshrc": "deny",
+      "~/.ssh/*": "deny"
+    },
+    "read": {
+      "~/.ssh/*": "deny",
+      "~/.gnupg/*": "deny",
+      "~/.aws/*": "deny",
+      "~/.azure/*": "deny",
+      "~/.config/gh/*": "deny",
+      "~/.git-credentials": "deny",
+      "~/.docker/config.json": "deny",
+      "~/.kube/*": "deny",
+      "~/.npmrc": "deny",
+      "~/.npm/*": "deny",
+      "~/.pypirc": "deny",
+      "~/.gem/credentials": "deny",
+      "~/Library/Keychains/*": "deny",
+      "~/Library/Application Support/*metamask*": "deny",
+      "~/Library/Application Support/*electrum*": "deny",
+      "~/Library/Application Support/*exodus*": "deny",
+      "~/Library/Application Support/*phantom*": "deny",
+      "~/Library/Application Support/*solflare*": "deny"
+    }
+  },
+  "mcp": {
+    "chrome-devtools": {
+      "command": [
+        "npx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "context7": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    }
+  }
+}
